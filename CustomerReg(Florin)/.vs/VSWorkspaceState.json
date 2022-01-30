@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\CustomerReg(Florin)",
+    "\\PaymentAPI",
+    "\\PaymentAPI\\bin",
+    "\\PaymentAPI\\bin\\Debug",
+    "\\PaymentAPI\\bin\\Debug\\net5.0",
+    "\\PaymentAPI\\bin\\Debug\\net5.0\\ref",
+    "\\PaymentAPI\\obj",
+    "\\PaymentAPI\\obj\\Debug",
+    "\\PaymentAPI\\obj\\Debug\\net5.0"
+  ],
+  "SelectedNode": "\\CustomerReg(Florin)\\Program.cs",
+  "PreviewInSolutionExplorer": false
+}

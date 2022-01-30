@@ -1,0 +1,108 @@
+<form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+    <input type="hidden" name="customerId"
+    [value]="service.formData.customerId"/>
+    <div class="form-grop">
+        <div class="form-group">
+            <label>Name</label>
+            <input class="form-control form-control-lg" placeholder="Full Name"
+            name="customerName" #customerName="ngModel" [(ngModel)]="service.formData.customerName"
+            required [class.invalid]="customerName.invalid && customerName.touched" maxlength="200">
+        </div>
+        <div class="form-group">
+            <label>Website</label>
+            <input class="form-control form-control-lg" placeholder="www.example.com"
+            name="customerWebsite" #customerWebsite="ngModel" [(ngModel)]="service.formData.customerWebsite"
+            maxlength="100">
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input class="form-control form-control-lg" placeholder="example@gmail.com"
+            name="customerEmail" #customerEmail="ngModel" [(ngModel)]="service.formData.customerEmail"
+            maxlength="100">
+        </div>
+        <div class="form-group">
+            <label>Phone</label>
+            <input  class="form-control form-control-lg" placeholder="Max 15 Digit"
+            name="customerPhone" #customerPhone="ngModel" [(ngModel)]="service.formData.customerPhone"
+            required [class.invalid]="customerPhone.invalid && customerPhone.touched" maxlength="15">
+        </div>
+        <div>
+            <label>Address</label>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label>Street</label>
+                <input class="form-control form-control-lg" placeholder="Bridge"
+                name="addressStreet" #addressStreet="ngModel" [(ngModel)]="service.formData.addressStreet"
+                maxlength="100">
+            </div>
+            <div class="form-group col-md-2">
+                <label>Number</label>
+                <input class="form-control form-control-lg" placeholder="67"
+                name="addressNumber" #addressNumber="ngModel" [(ngModel)]="service.formData.addressNumber"
+                maxlength="10">
+            </div>
+            <div class="form-group col-md-2">
+                <label>City</label>
+                <input class="form-control form-control-lg" placeholder="London"
+                name="addressCity" #addressCity="ngModel" [(ngModel)]="service.formData.addressCity"
+                maxlength="100">
+            </div>
+            <div class="form-group col-md-2">
+                <label>Postcode</label>
+                <input class="form-control form-control-lg" placeholder="SW1A 0AA"
+                name="addressPostcode" #addressPostcode="ngModel" [(ngModel)]="service.formData.addressPostcode"
+                required [class.invalid]="addressPostcode.invalid && addressPostcode.touched" maxlength="100">
+            </div>
+            <div class="form-group">
+                <label>Country</label>
+                <input class="form-control form-control-lg" placeholder="United Kindom"
+                name="addressCountry" #addressCountry="ngModel" [(ngModel)]="service.formData.addressCountry"
+                required [class.invalid]="addressCountry.invalid && addressCountry.touched" maxlength="100">
+            </div>
+        </div>
+        
+        <div name="checkbox"><input
+            type="checkbox" name="InvoicingAddress"/> Invoicing address (not mandatory, only if is different than postal address)
+            <div>
+                <div class="form-row">
+                    <div class="form-group col-md-3" >
+                        <label>Street</label><!--Oosterdok 2, 1011 VX Amsterdam, Niederlande-->
+                        <input class="form-control form-control-lg" placeholder="Oosterdok" 
+                        name="addressStreet2" #addressStreet2="ngModel" [(ngModel)]="service.formData.addressStreet2"
+                        maxlength="100">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label>Number</label>
+                        <input class="form-control form-control-lg" placeholder="2"
+                        name="addressNumber2" #addressNumber2="ngModel" [(ngModel)]="service.formData.addressNumber2"
+                        maxlength="10">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label>City</label>
+                        <input class="form-control form-control-lg" placeholder="Amsterdam"
+                        name="addressCity2" #addressCity2="ngModel" [(ngModel)]="service.formData.addressCity2"
+                        maxlength="100">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label>Postcode</label>
+                        <input class="form-control form-control-lg" placeholder="1011 VX"
+                        name="addressPostcode2" #addressPostcode2="ngModel" [(ngModel)]="service.formData.addressPostcode2"
+                        maxlength="100">
+                    </div>
+                    <div class="form-group">
+                        <label>Country</label>
+                        <input class="form-control form-control-lg" placeholder="Niederlande"
+                        name="addressCountry2" #addressCountry2="ngModel" [(ngModel)]="service.formData.addressCountry2"
+                        maxlength="100">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid">Save</button>
+        </div>
+
+    </div>
+    
+</form>

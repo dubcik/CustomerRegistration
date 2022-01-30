@@ -1,0 +1,74 @@
+    <div class="jumbotron py-1">
+        <h1 class="display-4 text-center">Registration</h1>
+   </div>
+    
+    <app-customer-form></app-customer-form>
+    <div></div>
+    <p name="Space"></p>
+  
+
+
+    <div class="jumbotron py-3">
+        <h2 class="display-4 text-center">List of Customer</h2>
+    </div>
+    <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th>Customer Name</th>
+            <th>Website</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th></th>
+         </tr>
+       </thead>
+        <tbody>
+            <tr  *ngFor="let pd of service.list">
+              <td (click)="populareForm(pd)">{{pd.customerName}}</td>
+              <td (click)="populareForm(pd)">{{pd.customerWebsite}}</td>
+              <td (click)="populareForm(pd)">{{pd.customerEmail}}</td>
+              <td (click)="populareForm(pd)">{{pd.customerPhone}}</td>
+              <td>
+                <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(pd.customerId)"></i>
+              </td>
+            </tr>
+       </tbody>
+    </table>
+    <div>*To change the data, click on the data line. Data will be open on the Registration form.</div>
+       
+    <div name="checkbox"><input
+        type="checkbox" name="ShowData"/> Checked for more details 
+         
+        <table class="table">
+            <thead class="thead-light">
+            <tr>
+                <th>Customer Name</th>
+                <th>Address Street</th>
+                <th>Address Number</th>
+                <th>City</th>
+                <th>Postcode</th>
+                <th>Country</th>
+                <th>Invoicing Address Street</th>
+                <th>Invoicing Address Number</th>
+                <th>Invoicing City</th>
+                <th>Invoicing Postcode</th>
+                <th>Invoicing Country</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr  *ngFor="let pd of service.list">
+                    <td >{{pd.customerName}}</td>
+                    <td >{{pd.addressStreet}}</td>
+                    <td >{{pd.addressNumber}}</td>
+                    <td >{{pd.addressCity}}</td>
+                    <td >{{pd.addressPostcode}}</td>
+                    <td >{{pd.addressCountry}}</td>
+                    <td >{{pd.addressStreet2}}</td>
+                    <td >{{pd.addressNumber2}}</td>
+                    <td >{{pd.addressCity2}}</td>
+                    <td >{{pd.addressPostcode2}}</td>
+                    <td >{{pd.addressCountry2}}</td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
